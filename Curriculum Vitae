@@ -1,0 +1,102 @@
+%%%%%%
+% Tiago Secundo - curriculum vitae
+% Editado usando vim e texmaker
+% Uso de LaTeX e moderncv
+%%%%%%
+
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvtheme[grey]{classic}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8]{geometry}
+\usepackage{datenumber,fp}
+\usepackage[pdftex]{hyperref}
+ 
+\PassOptionsToPackage{pdftex, 
+	colorlinks=true, 
+	urlcolor=cyan, 
+	linkcolor=cyan, 
+	filecolor=cyan, 
+	citecolor=cyan}{hyperref}
+ 
+\AtBeginDocument{\setlength{\maketitlenamewidth}{11,5cm}}
+\AtBeginDocument{\recomputelengths}
+
+% Informações pessoais
+\firstname{\fontsize{30}{40}\selectfont Tiago Secundo}
+\title{Curriculum Vitae}
+\address{Rua do Bicame, 1387}{Diamantina - MG}
+\mobile {\href{https://api.whatsapp.com/send?phone=553398264407} {+55 (33) 9 9156-5427}}
+\email{tiago.secundo@ufvjm.edu.br}
+
+% --------------------------------------
+% CONTEÚDO
+% --------------------------------------
+
+\begin{document}
+\maketitle
+\section{Sobre}
+\cvcomputer
+{\textbf{Idade}}{23 anos}
+{\textbf{Estado civil}}{Solteiro}
+\cvcomputer
+{\textbf{Filhos}}{Não}
+{}{}
+
+\section{Formação Acadêmica}
+\cventry{Janeiro 2023 -- Atual}{Bachareleado em Sistemas de Informação}{}{Universidade Federal dos Vales do Jequitinhonha e Mucuri, UFVJM}{}{}
+
+
+\section{Habilidades Técnicas}
+\cvcomputer
+{\textbf{OS's}}{Windows, Linux}
+{\textbf{Linguagens}}{Java, C++, C#, Phyton, JS}
+\cvcomputer
+{\textbf{Ferramentas}}{GitHub, GitHub Desktop, MySQL, Spring Framework}
+{\textbf{}}{}
+\cvcomputer
+{\textbf{Metodologias}}{Scrum, Kanban, Gestão em Backlog}
+{\textbf{}}{}
+\cvcomputer
+{\textbf{Softwares}}{ Trello, Jyra, Slack, Power BI, Excel}
+{}{}
+
+% --------------------------------------
+% Experiência de Trabalho
+% --------------------------------------
+
+\section{Experiência Profissional}
+
+\cventry{Abril 2023 -- Janeiro 2024}{Gerente Comercial}{}{empresa Júnior Next Step}{}{Responsável por acompanhar todo o ciclo de vida dos projetos, desde o fechamento com o cliente até o pós-entrega. Conduzia reuniões para levantamento de requisitos com apoio do Trello, repassava as demandas ao time técnico e acompanhava o desenvolvimento via Jira, garantindo organização do backlog, prazos e qualidade da entrega. Também atuava no suporte ao cliente após a conclusão do projeto.}
+
+\cventry{Janeiro 2024 -- Janeiro 2025}{Diretor de Marketing e Comercial}{}{Empresa Júnior Next Step}{}{
+Atuação estratégica na área comercial e de marketing, com foco em análise de dados e prospecção de clientes. Utilizava Power BI e Excel para monitorar indicadores e apoiar a tomada de decisões. Atuava em conjunto com o time de projetos no acompanhamento de clientes e no alinhamento técnico das entregas. No marketing, liderava campanhas digitais e análise de desempenho utilizando ferramentas como Canva e Meta Business Suite, contribuindo para o posicionamento da marca e geração de oportunidades comerciais..
+}
+
+
+\section{Cursos de Especialização}
+
+\cventry{fevereiro 2025}{Java COMPLETO Programação Orientada a Objetos + Projetos
+}{}{Udemy}{}{Duração 54 horas}
+\cventry{Maio 2024}{Aprender a Empreender}{}{SEBRAE}{}{Duração 16 horas}
+\cventry{Maio 2024}{Spring Framework}{}{IFMG}{}{Duração 4 horas}
+
+\section{Perfil}
+
+\cvitem{GitHub}{\href{https://github.com/TiagoSecundo}{Tiago Secundo}}
+\cvitem{Linkedin}{\href{https://www.linkedin.com/in/tiago-secundo-205205254/}{Tiago Secundo}}
+
+
+\section{Idiomas}
+\cvitem{Inglês}{Intermediário (Boa leitura e escrita)}
+
+% --------------------------------------
+% INTERESSES E HOBBIES
+% --------------------------------------
+\section{Interesses e Hobbies}
+
+\cvitem{Prazer}{Começar novas leituras, atividade física, jogos online.}
+\cvitem{Necessário}{Praticar esportes.}
+% --------------------------------------
+\end{document}
