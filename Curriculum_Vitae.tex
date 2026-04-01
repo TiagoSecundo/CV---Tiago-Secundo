@@ -1,112 +1,303 @@
-%%%%%%
-% Tiago Secundo - curriculum vitae
-% Editado usando vim e texmaker
-% Uso de LaTeX e moderncv
-%%%%%%
+%-------------------------
+% Resume in Latex
+% Author : Harshibar
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
 
-\documentclass[11pt,a4paper]{moderncv}
-\moderncvtheme[grey]{classic}
+\documentclass[letterpaper,11pt]{article}
 
-\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
 \usepackage[T1]{fontenc}
-\usepackage[scale=0.8]{geometry}
-\usepackage{datenumber,fp}
-\usepackage[pdftex]{hyperref}
- 
-\PassOptionsToPackage{pdftex, 
-	colorlinks=true, 
-	urlcolor=cyan, 
-	linkcolor=cyan, 
-	filecolor=cyan, 
-	citecolor=cyan}{hyperref}
- 
-\AtBeginDocument{\setlength{\maketitlenamewidth}{11,5cm}}
-\AtBeginDocument{\recomputelengths}
 
-% Informações pessoais
-\firstname{\fontsize{30}{40}\selectfont Tiago Secundo}
-\title{Curriculum Vitae}
-\address{Rua do Bicame, 1387}{Diamantina - MG}
-\mobile {\href{https://api.whatsapp.com/send?phone=553398264407} {+55 (33) 9 9156-5427}}
-\email{tiago.secundo@ufvjm.edu.br}
 
-% --------------------------------------
-% CONTEÚDO
-% --------------------------------------
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
-\maketitle
-\section{Sobre}
-\cvcomputer
-{\textbf{Idade}}{23 anos}
-{\textbf{Estado civil}}{Solteiro}
-\cvcomputer
-{\textbf{Filhos}}{Não}
-{}{}
 
-\section{Formação Acadêmica}
-\cventry{Janeiro 2023 -- Atual}{Bachareleado em Sistemas de Informação}{}{Universidade Federal dos Vales do Jequitinhonha e Mucuri, UFVJM}{}{}
-
-
-\section{Habilidades Técnicas}
-\cvcomputer
-{\textbf{OS's}}{Windows, Linux (WSL2)}
-{\textbf{Linguagens}}{Java, C++, C#, PHP, JavaScript/Node.js, TypeScript}
-
-\cvcomputer
-{\textbf{Frameworks}}{Laravel, Spring Boot, .NET, React Native (Expo), Express.js}
-{\textbf{Ferramentas}}{Git, GitHub, GitLab, MySQL, Oracle, Docker, Docker Compose, Laravel Sail}
-
-\cvcomputer
-{\textbf{Metodologias}}{Scrum, Kanban, Gestão de Backlog}
-{\textbf{Softwares}}{ClickUp, Trello, Jira, Slack, Pacote Office Completo}
-{}{}
-
-% --------------------------------------
-% Experiência de Trabalho
-% --------------------------------------
-
-\section{Experiência Profissional}
-
-\cventry{Outubro 2025}{Estágiario}{}{GAFIT}{}{Atuação no desenvolvimento de aplicações web e mobile utilizando Laravel (PHP) com Docker/Sail e React Native com Expo. Responsável por implementar novas funcionalidades, corrigir bugs e estruturar integrações entre frontend e backend. Trabalho diário com WSL2, controle de versões com Git/GitHub, gerenciamento de ambiente Docker, autenticação, APIs REST, modelagem de dados e boas práticas de arquitetura. Suporte ao time na documentação, melhoria de processos e organização do fluxo de trabalho usando metodologias ágeis.}
-
-\cventry{Julho 2025 --  Outubro 2025}{Estágiario}{}{Ipsemg MG}{}{Suporte técnico e intermediação com setores internos e empresas terceirizadas da área, desenvolvendo e aplicando treinamentos e eventos de capacitação sobre utilização e manutenção de TICs, navegação em sistemas web e não web institucionais e uso de sistemas internos como SEI, SICAD e Workflow. Participação de rotinas administrativas em diferentes setores, atendimento a clientes.}
-
-\cventry{Janeiro 2024 -- Janeiro 2025}{Diretor de Marketing e Comercial}{}{Empresa Júnior Next Step}{}{
-Atuação estratégica na área comercial e de marketing, com foco em análise de dados e prospecção de clientes. Utilizava Power BI e Excel para monitorar indicadores e apoiar a tomada de decisões. Atuava em conjunto com o time de projetos no acompanhamento de clientes e no alinhamento técnico das entregas. No marketing, liderava campanhas digitais e análise de desempenho utilizando ferramentas como Canva e Meta Business Suite, contribuindo para o posicionamento da marca e geração de oportunidades comerciais.
-}
-
-\cventry{Abril 2023 -- Janeiro 2024}{Gerente Comercial}{}{empresa Júnior Next Step}{}{Responsável por acompanhar todo o ciclo de vida dos projetos, desde o fechamento com o cliente até o pós-entrega. Conduzia reuniões para levantamento de requisitos com apoio do Trello, repassava as demandas ao time técnico e acompanhava o desenvolvimento via Jira, garantindo organização do backlog, prazos e qualidade da entrega. Também atuava no suporte ao cliente após a conclusão do projeto.}
-
-\cventry{Janeiro 2021 -- Março 2022}{Monitor de Academia}{}{Academia Flexão}{}{
-Atuava como monitro em uma academia, onde fazia o acompanhamento de alunos/clientes, também fazia fichas de treinos, manutenção de equipamentos e atendimento para novos clientes. 
-}
-\cventry{Janeiro 2017 -- Dezembro 2019}{Balconista}{}{Papelaria Nossa Senhora Aparecida}{}{
-Atuava no atendimento direto ao cliente, nos pedidos aos fornecedores, retirada de nota fiscal e demais funções.
-}
-
-\section{Cursos de Especialização}
-
-\cventry{fevereiro 2025}{Java COMPLETO Programação Orientada a Objetos + Projetos
-}{}{Udemy}{}{Duração 54 horas}
-\cventry{Maio 2024}{Aprender a Empreender}{}{SEBRAE}{}{Duração 16 horas}
-\cventry{Maio 2024}{Spring Framework}{}{IFMG}{}{Duração 4 horas}
-
-\section{Perfil}
-
-\cvitem{GitHub}{\href{https://github.com/TiagoSecundo}{Tiago Secundo}}
-\cvitem{Linkedin}{\href{https://www.linkedin.com/in/tiago-secundo-205205254/}{Tiago Secundo}}
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Tiago Secundo Santos} \\ \vspace{5pt}
+    \small \faMapMarker* \hspace{2pt} \texttt{Diamantina, MG} \hspace{1pt} $|$ \hspace{1pt}
+    \small \faPhone* \texttt{(33)99156-5427} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} \texttt{tiagosecundo11@gmail.com} \hspace{1pt} $|$ 
+    \hspace{1pt} \faGithub \hspace{2pt} \href{https://github.com/TiagoSecundo}{\myuline {github.com/TiagoSecundo}} \hspace{1pt} $|$
+    \\ \hspace{1pt} \faLinkedin \hspace{2pt} \href{https://www.linkedin.com/in/tiago-secundo-205205254/}{\myuline {linkedin.com/in/tiago-secundo}}
+    \\ \vspace{-3pt}
+\end{center}
 
 
-\section{Idiomas}
-\cvitem{Inglês}{Intermediário (Boa leitura e escrita)}
+%-----------EXPERIENCE-----------
 
-% --------------------------------------
-% INTERESSES E HOBBIES
-% --------------------------------------
-\section{Interesses e Hobbies}
+\section{EXPERIENCIA}
+  \resumeSubHeadingListStart
+      \resumeSubheading
+  {GAFIT}{Outubro. 2025 -- Março 2026}
+  {Estagiário de Desenvolvimento}{Diamantina, MG}
+  \resumeItemListStart
+      \resumeItem{Desenvolvimento e manutenção de \textbf{Chat Bot} utilizando \textbf{Node.js} com o framework \textbf{AdonisJS}, seguindo arquitetura \textbf{MVC}.}
+    \resumeItem{Implementação de \textbf{APIs RESTful} para automação de interações e integração com serviços externos.}
+    \resumeItem{Utilização do \textbf{ORM Lucid} para modelagem e persistência de dados, garantindo organização e integridade das informações.}
+    \resumeItem{Aplicação de \textbf{mecanismos de autenticação e segurança}, incluindo proteção de rotas, validação de dados e tratamento de informações sensíveis.}
+    \resumeItem{Uso de \textbf{middlewares} para controle de requisições e organização do fluxo da aplicação.}
+    \resumeItem{Estruturação do projeto com foco em \textbf{boas práticas de arquitetura} e separação de responsabilidades.}
+    \resumeItem{Ambiente de desenvolvimento com \textbf{Docker} e \textbf{WSL2}, garantindo padronização e isolamento.}
+  \resumeItemListEnd
+  
+    \resumeSubheading
+      {Sistema de Gestão de Estágios}{Ago. 2025 -- Dez. 2025}
+      {Desenvolvedor Back-end}{Diamantina, MG}
+      \resumeItemListStart
+        \resumeItem{Desenvolvimento de uma API REST robusta com \textbf{Java 21} e \textbf{Spring Boot 3} para automatizar o ciclo de vida de estágios.}
+        \resumeItem{Implementação de segurança via \textbf{Spring Security} e \textbf{JWT}, com controle de acesso para 3 perfis de usuários.}
+         \resumeItem{Criação de sistema de notificações automáticas (\textbf{JavaMail}) para ativação de contas e alertas de prazos/pendências via \textbf{Schedulers}.}
+        \resumeItem{Persistência de dados em \textbf{PostgreSQL} e aplicação de Padrões de Projeto.}
+        \resumeItem{Deploy e hospedagem na Square Cloud.}
+      \resumeItemListEnd
 
-\cvitem{Prazer}{Começar novas leituras, atividade física, jogos online.}
-\cvitem{Necessário}{Praticar esportes.}
-% --------------------------------------
+      \resumeSubheading
+  {IPSEMG - Instituto de Previdência dos Servidores do Estado de Minas Gerais}{Julho 2025 -- Outubro. 2025}
+  {Estagiário de TI}{Minas Gerais, MG}
+  \resumeItemListStart
+    \resumeItem{Prestação de \textbf{suporte técnico} a usuários, atuando na resolução de problemas relacionados a sistemas e infraestrutura de \textbf{TIC}.}
+    \resumeItem{Intermediação entre \textbf{setores internos} e \textbf{empresas terceirizadas}, auxiliando na comunicação e resolução de demandas técnicas.}
+    \resumeItem{Planejamento e aplicação de \textbf{treinamentos e capacitações} sobre uso e manutenção de tecnologias, sistemas institucionais e boas práticas digitais.}
+    \resumeItem{Suporte na utilização de sistemas corporativos como \textbf{SEI}, \textbf{SICAD} e \textbf{Workflow}, auxiliando usuários na navegação e operação.}
+    \resumeItem{Participação em \textbf{rotinas administrativas} em diferentes setores, contribuindo para organização e eficiência dos processos internos.}
+    \resumeItem{Atendimento a usuários/clientes, garantindo \textbf{suporte eficiente} e melhoria na experiência com os sistemas institucionais.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Empresa Júnior Next Step}{Período (ex: Jan. 2024 -- Dez. 2024)}
+  {Diretor de Marketing e Comercial}{Diamantina, MG}
+  \resumeItemListStart
+    \resumeItem{Atuação estratégica nas áreas de \textbf{marketing} e \textbf{comercial}, com foco em \textbf{análise de dados} e \textbf{prospecção de clientes}.}
+    \resumeItem{Monitoramento de indicadores de desempenho utilizando \textbf{Power BI} e \textbf{Excel}, apoiando a \textbf{tomada de decisões} orientada a dados.}
+    \resumeItem{Colaboração com o time de projetos no \textbf{acompanhamento de clientes} e alinhamento técnico das entregas.}
+    \resumeItem{Planejamento e execução de \textbf{campanhas digitais}, incluindo análise de métricas e otimização de resultados.}
+    \resumeItem{Uso de ferramentas como \textbf{Canva} e \textbf{Meta Business Suite} para gestão de conteúdo e performance.}
+    \resumeItem{Contribuição para o \textbf{posicionamento da marca} e geração de \textbf{oportunidades comerciais}.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Empresa Júnior Next Step}{Período (ex: Jan. 2023 -- Dez. 2023)}
+  {Gerente Comercial}{Diamantina, MG}
+  \resumeItemListStart
+    \resumeItem{Gestão do \textbf{ciclo de vida dos projetos}, desde o fechamento com o cliente até o \textbf{pós-entrega}.}
+    \resumeItem{Condução de reuniões para \textbf{levantamento de requisitos}, utilizando \textbf{Trello} para organização e acompanhamento inicial das demandas.}
+    \resumeItem{Atuação como ponte entre \textbf{cliente e equipe técnica}, garantindo clareza na comunicação e alinhamento das entregas.}
+    \resumeItem{Acompanhamento do desenvolvimento utilizando \textbf{Trello}, com foco em \textbf{gestão de backlog}, prazos e qualidade.}
+    \resumeItem{Suporte ao cliente no \textbf{pós-projeto}, assegurando satisfação e continuidade do relacionamento.}
+  \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+
+%-----------PROJECTS-----------
+
+\section{PROJETOS}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Sistema de Gestão para Oficina Mecânica}} {Fev. 2025 -- Jul. 2025}
+        \resumeItemListStart
+            \resumeItem{Desenvolvimento de um sistema completo em \textbf{Java} focado em \textbf{Orientação a Objetos (POO)} e \textbf{Arquitetura em Camadas} para gestão de Ordens de Serviço, Clientes e Veículos.}
+            \resumeItem{Implementação de regras de negócio complexas para \textbf{Controle de Estoque} (rastreabilidade de lotes e fornecedores) e algoritmo de \textbf{Agendamento de Serviços} com validação de disponibilidade de recursos (elevadores/mecânicos).}
+            \resumeItem{Aplicação de \textbf{Padrões de Projeto} e documentação técnica rigorosa com modelagem \textbf{UML} (Diagramas de Classe, Sequência e Casos de Uso) utilizando \textbf{LaTeX} e \textbf{TikZ-UML}.}
+        \resumeItemListEnd
+          
+        \resumeProjectHeading
+        {\textbf{PET - Saúde Digital}}{Ago. 2025 -- Dez. 2025}
+            \resumeItemListStart
+        \resumeItem{Participação no \textbf{PET-Saúde Digital (UFVJM)}, atuando na integração entre tecnologia e saúde pública.}
+        \resumeItem{Apoio em ações de \textbf{territorialização} para análise das necessidades das comunidades do Vale do Jequitinhonha.}
+        \resumeItem{Colaboração no desenvolvimento e aplicação de \textbf{soluções digitais em saúde}, com foco em acessibilidade e impacto social.}
+        \resumeItem{Atuação em equipe multidisciplinar com estudantes, professores e profissionais da rede de saúde.}
+        \resumeItem{Aplicação de conhecimentos de \textbf{tecnologia da informação} em contextos reais da saúde pública.}
+        \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Sistema de Agendamento - Oficina Mecânica}}{Ago. 2025 -- Dez. 2025}
+         \resumeItemListStart
+    \resumeItem{Desenvolvimento de uma aplicação de \textbf{agendamento de horários (CRUD)} utilizando \textbf{Java} com \textbf{Spring Boot}.}
+    \resumeItem{Implementação de \textbf{API RESTful} para criação, edição, listagem e remoção de agendamentos.}
+    \resumeItem{Estruturação em camadas (\textbf{Controller, Service, Repository}) seguindo boas práticas de arquitetura.}
+    \resumeItem{Utilização de \textbf{Spring Data JPA} para persistência de dados e integração com banco em memória (\textbf{H2}).}
+    \resumeItem{Implementação de regras de negócio para \textbf{validação de conflitos de horário} em agendamentos.}
+    \resumeItem{Manipulação de datas com \textbf{LocalDate} e \textbf{LocalDateTime} para controle de horários.}
+\resumeItem{Uso de \textbf{Lombok} para redução de código boilerplate e maior produtividade.}
+\resumeItem{Controle de versão com \textbf{Git/GitHub} e desenvolvimento baseado em projeto prático para portfólio.}
+        \resumeItemListEnd
+
+        
+          
+    \resumeSubHeadingListEnd
+
+
+
+%-----------EDUCATION-----------
+\section {EDUCAÇÂO}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Universidade Federal dos Vales Jequitinhonha e Mucuri - UFVJM}{Out. 2022 -- Jul. 2027}
+      {Bacharel em Sistemas de Informação}{Diamantina, MG}
+      
+      	\resumeItemListStart
+    	\resumeItem{\textbf{Engenharia de Software:} Programação Orientada a Objetos, Engenharia Web, Banco de Dados, Testes e Qualidade de Software.}
+        \resumeItem{\textbf{Fundamentos:} Algoritmos e Estruturas de Dados Avançados, Inteligência Artificial, Sistemas Operacionais, Redes de Computadores.}
+        \resumeItem{\textbf{Negócios e Decisão:} Gestão de Sistemas de Informação, Sistemas de Apoio à Decisão, Pesquisa Operacional, Empreendedorismo.}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{COMPETÊNCIAS TÉCNICAS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Linguagens de Programação}{: Java (8, 17, 21), JavaScript (Node.js), Python, SQL, HTML5, CSS3, Bash/Shell Script.} \\
+     \vspace{2pt}
+     
+     \textbf{Frameworks e Tecnologias}{: Spring Boot 3, Spring Security, Spring Data JPA, Hibernate, AdonisJS (Node.js), Lucid ORM, JWT, Maven.} \\
+     \vspace{2pt}
+     
+     \textbf{Desenvolvimento Back-end}{: APIs RESTful, Arquitetura MVC, Arquitetura em Camadas, Validação de Dados, Middlewares, Autenticação e Autorização.} \\
+     \vspace{2pt}
+     
+     \textbf{Banco de Dados}{: PostgreSQL, MySQL, SQL Server, H2, NoSQL, Modelagem Relacional (MER/DER), Persistência com ORM.} \\
+     \vspace{2pt}
+     
+     \textbf{DevOps e Ferramentas}{: Docker, Git, GitHub, Linux (Ubuntu/WSL2), DBeaver, Postman, IntelliJ IDEA, VS Code.} \\
+     \vspace{2pt}
+     
+     \textbf{Testes e Qualidade}{: Validação de APIs, Tratamento de Erros, Boas Práticas de Código, Padronização de Projetos.} \\
+     \vspace{2pt}
+     
+     \textbf{Metodologias e Conceitos}{: Programação Orientada a Objetos (POO), Design Patterns, Scrum, Kanban, Análise de Requisitos, UML.}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
 \end{document}
